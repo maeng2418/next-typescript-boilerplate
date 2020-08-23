@@ -1,0 +1,1 @@
+# 보일러 플레이트 with TypeScript and Next.js

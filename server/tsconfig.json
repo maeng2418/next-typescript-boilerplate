@@ -1,0 +1,35 @@
+{
+  "extends": "../shared/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "paths": {
+      "@daos/*": [
+        "src/daos/*"
+      ],
+      "@models/*": [
+        "src/models/*"
+      ],
+      "@config/*": [
+        "src/config/*"
+      ],
+      "@server": [
+        "src/Server"
+      ]
+    },
+    "types": [
+      "node"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "spec/**/*.ts"
+  ]
+}
