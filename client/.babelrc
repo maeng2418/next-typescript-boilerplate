@@ -1,0 +1,26 @@
+// styled components 스타일이 적용전에 렌더가 되는 문제 해결법
+{
+  "presets": [
+    "next/babel"
+  ],
+  "plugins": [
+    [
+      "styled-components",
+      {
+        "ssr": true,
+        "displayName": true,
+        "preprocess": false
+      }
+    ]
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        "transform-remove-console"
+      ]
+    },
+    "development": {
+      "plugins": []
+    }
+  }
+}
