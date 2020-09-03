@@ -25,17 +25,17 @@ const app = express();
  ***********************************************************************************/
 
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // 개발모드시 불려지는 route를 보여준다.
 if (process.env.NODE_ENV === 'development') {
-    app.use(morgan('dev', { stream: new LoggerStream() }));
+  app.use(morgan('dev', { stream: new LoggerStream() }));
 }
 
 // 보안
 if (process.env.NODE_ENV === 'production') {
-    app.use(helmet());
+  app.use(helmet());
 }
 
 // body-parser
@@ -47,10 +47,10 @@ app.use('/api', BaseRouter);
 
 // Print API errors
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
-    logger.error(err.stack);
-    return res.status(BAD_REQUEST).json({
-        error: err.message,
-    });
+  logger.error(err.stack);
+  return res.status(BAD_REQUEST).json({
+    error: err.message,
+  });
 });
 
 // Export express instance

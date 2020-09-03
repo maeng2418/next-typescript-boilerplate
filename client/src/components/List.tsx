@@ -1,12 +1,12 @@
-import * as React from 'react'
-import ListItem from './ListItem'
-import { User } from '../interfaces'
+import * as React from 'react';
+import ListItem from './ListItem';
+import { User, IProps } from '../interfaces';
 
-type Props = {
-  items: User[]
+interface IListProps extends IProps {
+  items: User[];
 }
 
-const List = ({ items }: Props) => (
+const List = ({ items }: IListProps) => (
   <ul>
     {items.map((item) => (
       <li key={item.id}>
@@ -14,6 +14,6 @@ const List = ({ items }: Props) => (
       </li>
     ))}
   </ul>
-)
+);
 
-export default List
+export default List;

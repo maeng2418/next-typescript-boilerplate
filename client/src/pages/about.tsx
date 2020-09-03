@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
 const AboutPage = () => (
   <>
@@ -10,6 +10,6 @@ const AboutPage = () => (
       </Link>
     </p>
   </>
-)
+);
 
-export default AboutPage
+export default AboutPage;

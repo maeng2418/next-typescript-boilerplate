@@ -8,9 +8,9 @@ const App: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
   pageProps,
 }) => {
   return (
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   );
 };
 

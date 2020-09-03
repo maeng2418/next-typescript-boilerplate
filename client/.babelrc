@@ -1,8 +1,6 @@
 // styled components 스타일이 적용전에 렌더가 되는 문제 해결법
 {
-  "presets": [
-    "next/babel"
-  ],
+  "presets": ["next/babel"],
   "plugins": [
     [
       "styled-components",
@@ -15,9 +13,7 @@
   ],
   "env": {
     "production": {
-      "plugins": [
-        "transform-remove-console"
-      ]
+      "plugins": ["transform-remove-console"]
     },
     "development": {
       "plugins": []

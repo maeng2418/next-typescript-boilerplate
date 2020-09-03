@@ -1,18 +1,17 @@
-import React from 'react'
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
+import { User, IProps } from '../interfaces';
 
-import { User } from '../interfaces'
-
-type Props = {
-  data: User
+interface IListItemProps extends IProps {
+  data: User;
 }
 
-const ListItem = ({ data }: Props) => (
+const ListItem = ({ data }: IListItemProps) => (
   <Link href="/users/[id]" as={`/users/${data.id}`}>
     <a>
       {data.id}: {data.name}
     </a>
   </Link>
-)
+);
 
-export default ListItem
+export default ListItem;

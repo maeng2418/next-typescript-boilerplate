@@ -4,7 +4,11 @@
 //
 // import User from 'path/to/interfaces';
 
-export type User = {
-  id: number
-  name: string
+export interface User {
+  id: number;
+  name: string;
+}
+
+export interface IProps {
+  children?: React.ReactNode;
 }

@@ -1,8 +1,8 @@
 import { User } from '../models';
 
-type Body = {
-    id: string
-    password: string
+interface IBody {
+  id: string;
+  password: string;
 }
 
 const findAll = async () => {
@@ -14,7 +14,7 @@ const findAll = async () => {
     }
 };
 
-const create = async (body:Body) => {
+const create = async (body:IBody) => {
     try {
         await User.create(body);
       } catch (err) {
@@ -23,7 +23,7 @@ const create = async (body:Body) => {
 };
 
 
-const update = async(id:number, body:Body) => {
+const update = async(id:number, body:IBody) => {
     try {
         const user = await User.findByPk(id);
         if (!user)
