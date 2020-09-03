@@ -1,0 +1,12 @@
+@font-face {
+  font-family: Minsk;
+  src: url('/assets/fonts/Minsk.otf');
+}
+.a-t {
+  color: red;
+  font-family: Minsk;
+  text-decoration: none;
+  font-size: 13px;
+  text-align: center;
+  margin: 10px 0;
+}

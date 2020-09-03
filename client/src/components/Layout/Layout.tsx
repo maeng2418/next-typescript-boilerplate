@@ -1,13 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
-import { IProps } from '../interfaces';
+import { IProps } from '../../interfaces';
+import styles from './styles.module.css';
 
-const Layout = ({ children }: IProps) => (
+export const Layout = ({ children }: IProps) => (
   <div>
     <header>
       <nav>
         <Link href="/">
-          <a>Home</a>
+          <a className={styles.aT}>Home</a>
         </Link>{' '}
         |{' '}
         <Link href="/about">
@@ -27,5 +28,3 @@ const Layout = ({ children }: IProps) => (
     </footer>
   </div>
 );
-
-export default Layout;
