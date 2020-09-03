@@ -1,9 +1,17 @@
 // _document는 SSR일때 html 및 body 태그에 내용을 추가하거나 수정할때 사용 (HTML Document)
-import Document, { DocumentContext, Html, Head, Main, NextScript } from 'next/document';
+import React from 'react';
+import Document, {
+  DocumentContext,
+  DocumentInitialProps,
+  Html,
+  Head,
+  Main,
+  NextScript,
+} from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
+  static getInitialProps = async (ctx: DocumentContext): Promise<DocumentInitialProps> => {
     /* styled-component 적용이 안 되는 문제를 해결하기 위한 코드 */
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
@@ -28,9 +36,9 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal();
     }
-  }
+  };
 
-  render() {
+  render(): JSX.Element {
     return (
       <Html>
         <Head>

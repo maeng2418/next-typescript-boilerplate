@@ -51,7 +51,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 // express에서 logger.stream 호출 시 표시하는 형태
 class LoggerStream {
-  write(message: string) {
+  write(message: string): void {
     logger.info(message.replace(/\n$/, '')); // 모건이 \n 으로 끝내는 나쁜 습관을 가지고 있으므로 윈스턴에
   }
 }

@@ -1,6 +1,8 @@
+import React from 'react';
+import { NextPage } from 'next';
 import Link from 'next/link';
 
-const IndexPage = () => (
+const IndexPage: NextPage = () => (
   <>
     <h1>Hello Next.js 👋</h1>
     <p>

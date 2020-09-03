@@ -5,7 +5,7 @@ interface IListDetailProps extends IProps {
   item: User;
 }
 
-export const ListDetail = ({ item: user }: IListDetailProps) => (
+export const ListDetail: React.FC<IListDetailProps> = ({ item: user }: IListDetailProps) => (
   <div>
     <h1>Detail for {user.name}</h1>
     <p>ID: {user.id}</p>

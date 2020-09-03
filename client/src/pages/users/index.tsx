@@ -1,6 +1,6 @@
-import { GetStaticProps } from 'next';
+import React from 'react';
+import { NextPage, GetStaticProps } from 'next';
 import Link from 'next/link';
-
 import { User } from '../../interfaces';
 import { sampleUserData } from '../../utils/sample-data';
 import List from '../../components/List';
@@ -9,7 +9,7 @@ type Props = {
   items: User[];
 };
 
-const WithStaticProps = ({ items }: Props) => (
+const WithStaticProps: NextPage<Props> = ({ items }: Props) => (
   <>
     <h1>Users List</h1>
     <p>

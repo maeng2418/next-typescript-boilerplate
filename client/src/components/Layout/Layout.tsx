@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { IProps } from '../../interfaces';
 import styles from './styles.module.css';
 
-export const Layout = ({ children }: IProps) => (
+export const Layout: React.FC = ({ children }: IProps) => (
   <div>
     <header>
       <nav>

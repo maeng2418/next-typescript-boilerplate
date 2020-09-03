@@ -6,7 +6,7 @@ interface IListProps extends IProps {
   items: User[];
 }
 
-export const List = ({ items }: IListProps) => (
+export const List: React.FC<IListProps> = ({ items }: IListProps) => (
   <ul>
     {items.map((item) => (
       <li key={item.id}>

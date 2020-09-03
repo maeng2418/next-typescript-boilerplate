@@ -3,7 +3,7 @@ import { BAD_REQUEST, CREATED, OK } from 'http-status-codes';
 import { paramMissingError } from '@config/constants';
 import { UserService } from '../services';
 
-const findAll = async (req: Request, res: Response) => {
+const findAll = async (req: Request, res: Response): Promise<Response> => {
   try {
     const users = await UserService.findAll();
     return res.status(OK).json({ users });
@@ -14,7 +14,7 @@ const findAll = async (req: Request, res: Response) => {
   }
 };
 
-const create = async (req: Request, res: Response) => {
+const create = async (req: Request, res: Response): Promise<void | Response> => {
   const { body } = req;
 
   try {
@@ -27,7 +27,7 @@ const create = async (req: Request, res: Response) => {
   }
 };
 
-const update = async (req: Request, res: Response) => {
+const update = async (req: Request, res: Response): Promise<void | Response> => {
   const { body, params } = req;
   const paramId = parseInt(params.id);
 
@@ -44,7 +44,7 @@ const update = async (req: Request, res: Response) => {
   }
 };
 
-const remove = async (req: Request, res: Response) => {
+const remove = async (req: Request, res: Response): Promise<void | Response> => {
   const { params } = req;
   const paramId = parseInt(params.id);
 

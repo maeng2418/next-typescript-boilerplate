@@ -1,15 +1,15 @@
-import { GetStaticProps, GetStaticPaths } from 'next';
-
+import React from 'react';
+import { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import { User } from '../../interfaces';
 import { sampleUserData } from '../../utils/sample-data';
 import ListDetail from '../../components/ListDetail';
 
-type Props = {
+interface IProps {
   item?: User;
   errors?: string;
-};
+}
 
-const StaticPropsDetail = ({ item, errors }: Props) => {
+const StaticPropsDetail: NextPage<IProps> = ({ item, errors }: IProps) => {
   if (errors) {
     return (
       <>

@@ -6,7 +6,7 @@ interface IListItemProps extends IProps {
   data: User;
 }
 
-export const ListItem = ({ data }: IListItemProps) => (
+export const ListItem: React.FC<IListItemProps> = ({ data }: IListItemProps) => (
   <Link href="/users/[id]" as={`/users/${data.id}`}>
     <a>
       {data.id}: {data.name}
