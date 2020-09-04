@@ -1,8 +1,8 @@
 import React from 'react';
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next';
-import { User } from '../../interfaces';
-import { sampleUserData } from '../../utils/sample-data';
-import ListDetail from '../../components/ListDetail';
+import { User } from '@interfaces';
+import { sampleUserData } from '@utils/sample-data';
+import ListDetail from '@components/ListDetail';
 
 interface IProps {
   item?: User;

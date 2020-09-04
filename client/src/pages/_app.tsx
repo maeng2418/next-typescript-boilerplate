@@ -2,8 +2,8 @@
 import React from 'react';
 import { NextComponentType } from 'next';
 import { AppContext, AppInitialProps, AppProps } from 'next/app';
-import Layout from '../components/Layout';
-import '../styles/styles.css';
+import Layout from '@components/Layout';
+import '@styles/styles.css';
 
 const App: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
   Component,

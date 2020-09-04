@@ -8,10 +8,13 @@
     "removeComments": true,
     "sourceMap": true,
     "paths": {
-      "@daos/*": ["src/daos/*"],
-      "@models/*": ["src/models/*"],
+      "@models": ["src/models"],
       "@config/*": ["src/config/*"],
-      "@server": ["src/Server"]
+      "@controllers": ["src/controllers"],
+      "@database": ["src/modules/database"],
+      "@routes": ["src/routes"],
+      "@services": ["src/services"],
+      "@shared/*": ["../shared/*"]
     },
     "types": ["node"],
     "typeRoots": ["node_modules/@types"]

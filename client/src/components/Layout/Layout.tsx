@@ -1,10 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
-import { IProps } from '../../interfaces';
+import Head from 'next/head';
+import { IProps } from '@interfaces';
 import styles from './styles.module.css';
 
 export const Layout: React.FC = ({ children }: IProps) => (
   <div>
+    <Head>
+      <title>Next 앱</title>
+    </Head>
     <header>
       <nav>
         <Link href="/">

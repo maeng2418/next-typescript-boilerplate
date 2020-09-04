@@ -1,6 +1,15 @@
 {
   "extends": "../shared/tsconfig.json",
   "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@pages/*": ["src/pages/*"],
+      "@components/*": ["src/components/*"],
+      "@interfaces": ["src/interfaces"],
+      "@utils/*": ["src/utils/*"],
+      "@shared/*": ["../shared/*"],
+      "@styles/*": ["src/styles/*"]
+    },
     "allowJs": true,
     "alwaysStrict": true,
     "forceConsistentCasingInFileNames": true,

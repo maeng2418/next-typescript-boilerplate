@@ -1,6 +1,6 @@
 import * as React from 'react';
-import ListItem from '../ListItem';
-import { User, IProps } from '../../interfaces';
+import ListItem from '@components/ListItem';
+import { User, IProps } from '@interfaces';
 
 interface IListProps extends IProps {
   items: User[];

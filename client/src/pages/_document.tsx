@@ -41,10 +41,7 @@ export default class MyDocument extends Document {
   render(): JSX.Element {
     return (
       <Html>
-        <Head>
-          <title>Next 앱</title>
-          {/* 각종 meta, script, link(css) 삽입  */}
-        </Head>
+        <Head>{/* 각종 meta, script, link(css) 삽입  */}</Head>
         <body>
           <Main />
           <NextScript />

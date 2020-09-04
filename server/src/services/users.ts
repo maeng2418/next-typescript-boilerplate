@@ -1,4 +1,4 @@
-import { User } from '../models';
+import { User } from '@models';
 
 interface IBody {
   id: string;

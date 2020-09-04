@@ -1,9 +1,9 @@
 import React from 'react';
 import { NextPage, GetStaticProps } from 'next';
 import Link from 'next/link';
-import { User } from '../../interfaces';
-import { sampleUserData } from '../../utils/sample-data';
-import List from '../../components/List';
+import { User } from '@interfaces';
+import { sampleUserData } from '@utils/sample-data';
+import List from '@components/List';
 
 type Props = {
   items: User[];

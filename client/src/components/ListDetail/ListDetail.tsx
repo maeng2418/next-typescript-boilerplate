@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { User, IProps } from '../../interfaces';
+import { User, IProps } from '@interfaces';
 
 interface IListDetailProps extends IProps {
   item: User;

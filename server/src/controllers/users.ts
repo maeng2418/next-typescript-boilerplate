@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import { BAD_REQUEST, CREATED, OK } from 'http-status-codes';
 import { paramMissingError } from '@config/constants';
-import { UserService } from '../services';
+import { UserService } from '@services';
 
 const findAll = async (req: Request, res: Response): Promise<Response> => {
   try {
