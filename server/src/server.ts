@@ -17,6 +17,9 @@ import logger, { LoggerStream } from '@config/logger';
 
 import { parserLimit } from '@config/constants';
 
+import passport from 'passport';
+import strategies from '@modules/auth/passport';
+
 // Init express
 const app = express();
 
@@ -41,6 +44,10 @@ if (process.env.NODE_ENV === 'production') {
 // body-parser
 app.use(bodyParser.json({ limit: parserLimit }));
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// Passport and JWT
+app.use(passport.initialize());
+passport.use(strategies.jwt);
 
 // Add APIs
 app.use('/api', BaseRouter);

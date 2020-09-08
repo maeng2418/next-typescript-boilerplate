@@ -1,3 +1,4 @@
 import sequelize from './database';
+import dbService from './db-service';
 
-export { sequelize };
+export { sequelize, dbService };

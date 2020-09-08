@@ -1,29 +1,18 @@
 import { Router } from 'express';
+import passport from 'passport';
 import { UserController } from '@controllers';
 
 const router = Router();
 
 /******************************************************************************
- *                      Get All Users - "GET /api/users/all"
+ *                      Auth User - "GET /api/users/"
  ******************************************************************************/
-router.get('/all', UserController.findAll);
+router.get('/', passport.authenticate('jwt', { session: false }), UserController.isValidToken);
 
 /******************************************************************************
- *                       Add One - "POST /api/users/add"
+ *                       SignUp and SignIn - "POST /api/users/email"
  ******************************************************************************/
-router.post('/add', UserController.create);
+router.post('/email', UserController.emailSignIn);
+router.post('/email/signup', UserController.emailSignUp);
 
-/******************************************************************************
- *                       Add One - "POST /api/users/add"
- ******************************************************************************/
-router.put('/update', UserController.update);
-
-/******************************************************************************
- *                    Delete - "DELETE /api/users/delete/:id"
- ******************************************************************************/
-router.delete('/delete/:id', UserController.remove);
-
-/******************************************************************************
- *                                     Export
- ******************************************************************************/
 export default router;

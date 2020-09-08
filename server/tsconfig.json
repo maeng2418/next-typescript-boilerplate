@@ -14,7 +14,8 @@
       "@database": ["src/modules/database"],
       "@routes": ["src/routes"],
       "@services": ["src/services"],
-      "@shared/*": ["../shared/*"]
+      "@shared/*": ["../shared/*"],
+      "@modules/*": ["src/modules/*"]
     },
     "types": ["node"],
     "typeRoots": ["node_modules/@types"]

@@ -1,52 +1,47 @@
 import { User } from '@models';
 
-interface IBody {
-  id: string;
+interface IUserData {
+  username: string;
+  email: string;
   password: string;
+  provider: string;
 }
 
-const findAll = async (): Promise<User[]> => {
+// 유저 조회
+const findUserByEmail = async (email: string): Promise<User | null> => {
   try {
-    const users = await User.findAll();
-    return users;
-  } catch (err) {
-    throw Error(err);
-  }
-};
-
-const create = async (body: IBody): Promise<void> => {
-  try {
-    await User.create(body);
-  } catch (err) {
-    throw Error(err);
-  }
-};
-
-const update = async (id: number, body: IBody): Promise<void> => {
-  try {
-    const user = await User.findByPk(id);
-    if (!user) throw Error(`no category with id ${id}`);
-    user.update(body);
-  } catch (err) {
-    throw Error(err);
-  }
-};
-
-const remove = async (id: number): Promise<void> => {
-  try {
-    await User.destroy({
+    const user = await User.findOne({
+      attributes: ['id', 'email', 'provider', 'password', 'username'],
       where: {
-        id,
+        email: email,
+        provider: 'email',
       },
     });
+    return user;
+  } catch (err) {
+    throw Error(err);
+  }
+};
+
+// 유저데이터 DB에 저장
+const createUser = async (userData: IUserData): Promise<[User, boolean]> => {
+  try {
+    const response = await User.findOrCreate({
+      attributes: ['id', 'username', 'password', 'email', 'provider'],
+      where: {
+        email: userData.email,
+        password: userData.password,
+        provider: userData.provider,
+      },
+      defaults: { username: userData.username },
+    });
+    return response;
   } catch (err) {
     throw Error(err);
   }
 };
 
 export default {
-  findAll,
-  create,
-  update,
-  remove,
+  findUserByEmail,
+  createUser,
 };
