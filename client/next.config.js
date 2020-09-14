@@ -1,5 +1,15 @@
 // next.config.js
+require('dotenv').config({
+  path: `../shared/env/${process.env.NODE_ENV}.env`,
+});
+
 module.exports = {
+  // 환경변수 세팅
+  env: {
+    API_END_POINT: process.env.API_END_POINT,
+    API_PORT: process.env.PORT,
+  },
+
   webpack: (config) => {
     const { rules } = config.module;
     // Find the array of "style rules" in the webpack config.

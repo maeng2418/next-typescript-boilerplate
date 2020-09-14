@@ -34,9 +34,9 @@ yarn-error.log*
 .vercel
 
 # env
-/server/env/development.env
-/server/env/production.env
-/server/env/test.env
+/shared/env/development.env
+/shared/env/production.env
+/shared/env/test.env
 /server/dist
 
 # log

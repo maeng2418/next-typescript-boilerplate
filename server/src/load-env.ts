@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+import path from 'path';
 import commandLineArgs from 'command-line-args';
 
 // Setup command line options
@@ -13,7 +14,7 @@ const options = commandLineArgs([
 
 // Set the env file
 const result2 = dotenv.config({
-  path: `./env/${options.env}.env`,
+  path: path.join(__dirname, `../../shared/env/${options.env}.env`),
 });
 
 if (result2.error) {

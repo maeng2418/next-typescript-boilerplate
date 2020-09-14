@@ -3,17 +3,19 @@
   "version": "1.0.0",
   "proxy": "http://localhost:3000",
   "scripts": {
-    "dev": "next",
+    "dev": "NODE_ENV=development next",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production next start",
     "type-check": "tsc"
   },
   "dependencies": {
+    "dotenv": "8.2.0",
     "next": "latest",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "reset-css": "^5.0.1",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "webpack": "^4.44.1"
   },
   "devDependencies": {
     "@types/node": "^12.12.21",

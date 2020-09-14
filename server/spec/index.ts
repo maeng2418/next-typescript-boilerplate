@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+import path from 'path';
 import commandLineArgs from 'command-line-args';
 import logger from '@config/Logger';
 
@@ -13,7 +14,7 @@ const options = commandLineArgs([
 
 // Set the env file
 const result2 = dotenv.config({
-  path: `./env/test.env`,
+  path: path.join(__dirname, `../../shared/env/test.env`),
 });
 if (result2.error) {
   throw result2.error;
