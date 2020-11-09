@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "proxy": "http://localhost:3000",
   "scripts": {
-    "dev": "NODE_ENV=development next",
+    "dev": "NODE_ENV=development next -p 80",
     "build": "next build",
-    "start": "NODE_ENV=production next start",
+    "start": "NODE_ENV=production next start -p 80",
     "type-check": "tsc"
   },
   "dependencies": {
